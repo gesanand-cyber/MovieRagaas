@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Raga Zone - Madhyamavathi</title>
+    <style>
+        :root {
+            --primary-color: #006600;
+            --primary-dark: #004d00;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .ragam-info {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        @media (min-width: 600px) {
+            .ragam-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .scales {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        audio {
+            max-width: 100%;
+            height: 36px;
+        }
+
+        .song-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .song-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .song-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sl-no {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .song-details {
+            flex-grow: 1;
+        }
+
+        .movie-name {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: #111;
+        }
+
+        .song-title {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .media-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 600px) {
+            .media-container {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+        }
+
+        .audio-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .download-link {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+
+        .video-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 110px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            padding: 5px;
+        }
+
+        .responsive-iframe-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 250px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .responsive-iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 4px;
+        }
+
+        .no-video {
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <header>
+        <h1>Ragam : MADHYAMAVATHI (22nd Melakartha)</h1>
+    </header>
+
+    <div class="ragam-info">
+        <div class="scales">
+            <div>Arohanam: S R2 M1 P N2 S</div>
+            <div>Avarohanam: S N2 P M1 R2 S</div>
+        </div>
+        <div>
+            <audio controls>
+                <source src="mp3/Kalyani/AarohanamAvarohanam.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <div class="song-list">
+
+        <!-- Song 1 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">1</span>
+                <div class="song-details">
+                    <div class="movie-name">Sippikkul Muthu (1985)</div>
+                    <div class="song-title">Thulli Thulli Nee Paadamma</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Arumbey-Ennai-Kadathi-MassTamilan.com.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/Kalyani/Arumbey-Ennai-Kadathi-MassTamilan.com.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/nsqjQ1ufhZ4" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 2 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">2</span>
+                <div class="song-details">
+                    <div class="movie-name">Padithal Mattum Podhuma (1962)</div>
+                    <div class="song-title">Pen Ondru Kandaen</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Yen-Penn-Endru-M.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Yen-Penn-Endru-M.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/oQMX3oP0PDY" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 3 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">3</span>
+                <div class="song-details">
+                    <div class="movie-name">Nenjirukkum Varai (1967)</div>
+                    <div class="song-title">Muthukkalae Kangal</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="Mp3/Kalyani/Amma-Endru-MassTamilan.com.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/Kalyani/Amma-Endru-MassTamilan.com.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/UNlsQUCOyu0" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 4 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">4</span>
+                <div class="song-details">
+                    <div class="movie-name">Ellamae En Raasaathan (1995)</div>
+                    <div class="song-title">Azhagaana Manja Pura</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Manathile Oru Paattu - TamilWire.com.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Manathile Oru Paattu - TamilWire.com.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/Er2r-AclkPY" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 5 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">5</span>
+                <div class="song-details">
+                    <div class="movie-name">Thendralae Ennai Thodu (1985)</div>
+                    <div class="song-title">Kavithai Paadum Kuyilae Kuyilae</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Vanthal-Mahalakshmiye-MassTamilan.com.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Vanthal-Mahalakshmiye-MassTamilan.com.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/aBiIIoUmiXk" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 6 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">6</span>
+                <div class="song-details">
+                    <div class="movie-name">Thai Moogambikai (1982)</div>
+                    <div class="song-title">Janani Janani</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Janani-Janani-Jagam-Nee-(RaagSong.Com).mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Janani-Janani-Jagam-Nee-(RaagSong.Com).mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/KQxEgUNDDbo" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 7 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">7</span>
+                <div class="song-details">
+                    <div class="movie-name">Pudukkavidhai (1982)</div>
+                    <div class="song-title">Vellai Pura Ondru</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Vellai  Pura.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Vellai  Pura.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/umZVTkXOiMM" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 8 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">8</span>
+                <div class="song-details">
+                    <div class="movie-name">Thalapathi (1991)</div>
+                    <div class="song-title">Yamunai atrile</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Yamunai-Aatrile.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Yamunai-Aatrile.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/Z-uribm60cM" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 9 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">9</span>
+                <div class="song-details">
+                    <div class="movie-name">Nayagan (1987)</div>
+                    <div class="song-title">Nee Oru Kaadhal Sangeetham</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Nee-Oru-Kaadhal-Sangeetham.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Nee-Oru-Kaadhal-Sangeetham.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/8SopMxaMhsk" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 11 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">11</span>
+                <div class="song-details">
+                    <div class="movie-name">Sindhu Bhairavi (1985)</div>
+                    <div class="song-title">Kalaivaaniye</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Kalaivaniye Unaithaane.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Kalaivaniye Unaithaane.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/2TPiE_KU8OM" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 12 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">12</span>
+                <div class="song-details">
+                    <div class="movie-name">Ambikabathy (1957)</div>
+                    <div class="song-title">Sindhanei Sei Maname</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Sinthanai Sei Maname.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Sinthanai Sei Maname.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/o9snBRv4fkI" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 13 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">13</span>
+                <div class="song-details">
+                    <div class="movie-name">Thanga Padhumai (1959)</div>
+                    <div class="song-title">Mugathil Mugam Paarkalaam</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/Mugathil Mugam Paarkalam.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/Mugathil Mugam Paarkalam.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/mFjL90kSe7Y" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 14 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">14</span>
+                <div class="song-details">
+                    <div class="movie-name">Thiruvarutchelvar (1967)</div>
+                    <div class="song-title">Mannavan Vandhaanadi</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/mannavan_vandhaanadi_LO-wENaITvc.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/mannavan_vandhaanadi_LO-wENaITvc.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/9XvAB86Atug" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 15 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">15</span>
+                <div class="song-details">
+                    <div class="movie-name">Oruvar Vazhum Aalayam (1988)</div>
+                    <div class="song-title">Malaiyorum Mayile</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/malaiyoram_mayile_TbNdCDIfUC4.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/malaiyoram_mayile_TbNdCDIfUC4.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/TbNdCDIfUC4" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 16 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">16</span>
+                <div class="song-details">
+                    <div class="movie-name">Paalum Pazhamum (1961)</div>
+                    <div class="song-title">Aalamaniyin Osaiyai</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/aalaya_maniyin_osaiyai.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/aalaya_maniyin_osaiyai.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/GN2a7WO3wkI" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 17 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">17</span>
+                <div class="song-details">
+                    <div class="movie-name">Unnai Naan Santhithen (1984)</div>
+                    <div class="song-title">Devan Thantha Veenai</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/devan_thantha_veenai.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/devan_thantha_veenai.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/FUQdNwuyj74" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 18 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">18</span>
+                <div class="song-details">
+                    <div class="movie-name">Policekkaran Magal (1962)</div>
+                    <div class="song-title">Indha Mandrathil Odi Varum</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/indha_mandrathil_odivarum_from_policekaran_magal.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/indha_mandrathil_odivarum_from_policekaran_magal.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VpL22TaggD4" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 19 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">19</span>
+                <div class="song-details">
+                    <div class="movie-name">Karnan (1964)</div>
+                    <div class="song-title">Iravum Nilavum</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/iravum_nilavum.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/iravum_nilavum.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/Nv6H2dIWhD8" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 20 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">20</span>
+                <div class="song-details">
+                    <div class="movie-name">Ezhavuthu Manithan (1982)</div>
+                    <div class="song-title">Veenaiyadi nee enakku</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/kalyani/ezhavathu_manithan_veenaiyadi.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/kalyani/ezhavathu_manithan_veenaiyadi.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <span class="no-video">No video available</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
