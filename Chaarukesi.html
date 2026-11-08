@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Raga Zone - Chaarukesi</title>
+    <style>
+        :root {
+            --primary-color: #006600;
+            --primary-dark: #004d00;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .ragam-info {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        @media (min-width: 600px) {
+            .ragam-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .scales {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        audio {
+            max-width: 100%;
+            height: 36px;
+        }
+
+        .song-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .song-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .song-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sl-no {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .song-details {
+            flex-grow: 1;
+        }
+
+        .movie-name {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: #111;
+        }
+
+        .song-title {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .media-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 600px) {
+            .media-container {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+        }
+
+        .audio-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .download-link {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+
+        .video-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 110px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            padding: 5px;
+        }
+
+        .responsive-iframe-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 250px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .responsive-iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 4px;
+        }
+
+        .no-video {
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <header>
+        <h1>Ragam : CHARUKESI (26th Melakartha)</h1>
+    </header>
+
+    <div class="ragam-info">
+        <div class="scales">
+            <div>Arohanam: S R2 G3 M1 P D1 N2 S</div>
+            <div>Avarohanam: S N2 D1 P M1 G3 R2 S</div>
+        </div>
+        <div>
+            <audio controls>
+                <source src="mp3/Chaarukesi/AarohanamAvarohanam.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <div class="song-list">
+
+        <!-- Song 1 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">1</span>
+                <div class="song-details">
+                    <div class="movie-name">Haridas (1944)</div>
+                    <div class="song-title">Manmadha Leela</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/Chaarukesi/manmatha_leelaiyai_vendrar.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/Chaarukesi/manmatha_leelaiyai_vendrar.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/9yD19IXQuMk" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 2 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">2</span>
+                <div class="song-details">
+                    <div class="movie-name">Saarangadhaara (1957)</div>
+                    <div class="song-title">Vasantha Mullai Polae Vandhu</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/Chaarukesi/vasantha_mullai.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/Chaarukesi/vasantha_mullai.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ZZCS5dh-ofM" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 3 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">3</span>
+                <div class="song-details">
+                    <div class="movie-name">Ulle Veliyae (1993)</div>
+                    <div class="song-title">Sakkara Katti Sakkara Katti Sandhana Petti</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/sakkara_katti_sakkara_katti.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/sakkara_katti_sakkara_katti.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ykm6WAGgLLE" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 4 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">4</span>
+                <div class="song-details">
+                    <div class="movie-name">Singaravelan (1992)</div>
+                    <div class="song-title">Thoodhu Selvadhaaradi</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/thoodhu_selvadharadi.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/thoodhu_selvadharadi.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/00_9hNk9f5c" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 5 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">5</span>
+                <div class="song-details">
+                    <div class="movie-name">Sendhoora Paandi (1993)</div>
+                    <div class="song-title">Sendhoora Paandikkoru Sodi Kili</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/senthoora_pandi_koru.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/senthoora_pandi_koru.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/o8KnkupL3ck" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 6 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">6</span>
+                <div class="song-details">
+                    <div class="movie-name">Nerukku Ner (1997)</div>
+                    <div class="song-title">Engengae Engengae</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/Engengae-Engengae.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/Engengae-Engengae.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VJmAvMirb2g" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 7 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">7</span>
+                <div class="song-details">
+                    <div class="movie-name">Paadhukaappu (1970)</div>
+                    <div class="song-title">Varacholladi</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/paathukaapu_varacholladi.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/paathukaapu_varacholladi.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/qWnvM0VrQ10" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 8 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">8</span>
+                <div class="song-details">
+                    <div class="movie-name">Sigaram (1991)</div>
+                    <div class="song-title">Agaram Ippo Sigaram Aachu</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/agaram_ippo_sigaram.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/agaram_ippo_sigaram.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ua26Xu74F3Y" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 9 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">9</span>
+                <div class="song-details">
+                    <div class="movie-name">Mundhaanai Mudichchu (1983)</div>
+                    <div class="song-title">Chinnanjiru Kiliyae</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/MundhanaiMudichchu.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/MundhanaiMudichchu.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/NTQ81jYKwfM" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 10 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">10</span>
+                <div class="song-details">
+                    <div class="movie-name">Vaathiyaar Veettu Pillai (1989)</div>
+                    <div class="song-title">Mana Maalaiyum Manjalum Soodi</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/mana_maalaiyum_manjalum.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/mana_maalaiyum_manjalum.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/EQXjCUhDPh8" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 11 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">11</span>
+                <div class="song-details">
+                    <div class="movie-name">Thambikki Endha Ooru (1984)</div>
+                    <div class="song-title">Kaadhalin Deepam Ondru</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/kadhalin_deepam_ondru.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/kadhalin_deepam_ondru.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/8x9LjtO6eqQ" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 12 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">12</span>
+                <div class="song-details">
+                    <div class="movie-name">Raghavendra (1985)</div>
+                    <div class="song-title">Aadal Kalaiyae Devan Thandhadhu</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/aadal_kalaiyae_devan_tandadu.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/aadal_kalaiyae_devan_tandadu.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/tw0rg6kE4Cw" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 13 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">13</span>
+                <div class="song-details">
+                    <div class="movie-name">Kungumam (1963)</div>
+                    <div class="song-title">Thoongaadha Kannendru Ondru</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/thoongatha_kanendru_ondru.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/chaarukesi/thoongatha_kanendru_ondru.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/RezBHNhup84" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 14 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">14</span>
+                <div class="song-details">
+                    <div class="movie-name">Rikshawkkaaran (1971)</div>
+                    <div class="song-title">Azhagiya Thamil Magal Ival</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/azhagiya_tamil_magal_ival.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/azhagiya_tamil_magal_ival.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/v9AmoELiJAw" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 15 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">15</span>
+                <div class="song-details">
+                    <div class="movie-name">Samsaaram Adhu Minsaaram (1989)</div>
+                    <div class="song-title">Super Staru Yaarunu Kaetta</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/samsaaram-adhu-minsaaram.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/samsaaram-adhu-minsaaram.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/hlfo9b9_0VE" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 16 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">16</span>
+                <div class="song-details">
+                    <div class="movie-name">Naanae Raaja Naanae Mandhiri (1985)</div>
+                    <div class="song-title">Mayanginaen Solla Thayanginaen</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/mayanginen_solla_thayanginen.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/mayanginen_solla_thayanginen.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dt6wFSVgsbE" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 17 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">17</span>
+                <div class="song-details">
+                    <div class="movie-name">Amaran (1992)</div>
+                    <div class="song-title">Chandiranae Suriyanae</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/amaran_chandirane_suriyane.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="mp3/chaarukesi/amaran_chandirane_suriyane.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/y2JnqFYqpAw" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 18 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">18</span>
+                <div class="song-details">
+                    <div class="movie-name">Oomai Kuyil (1988)</div>
+                    <div class="song-title">En Raasaathi Nee Vazhanum</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/en_rasathi_nee_vazhanum.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/en_rasathi_nee_vazhanum.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <span class="no-video">No video available</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 19 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">19</span>
+                <div class="song-details">
+                    <div class="movie-name">Madurai Veeran (1956)</div>
+                    <div class="song-title">Aadal Kaaneero</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/aadal_kaaneero.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/aadal_kaaneero.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/i1VDjifCeng" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song 20 -->
+        <div class="song-card">
+            <div class="song-header">
+                <span class="sl-no">20</span>
+                <div class="song-details">
+                    <div class="movie-name">Annaiyin Aanai (1958)</div>
+                    <div class="song-title">Neeyae Gathi Easwari</div>
+                </div>
+            </div>
+            <div class="media-container">
+                <div class="audio-section">
+                    <audio controls><source src="mp3/chaarukesi/neeyae_kathi_eeswari.mp3" type="audio/mpeg"></audio>
+                    <a class="download-link" href="Mp3/chaarukesi/neeyae_kathi_eeswari.mp3" download>Download MP3</a>
+                </div>
+                <div class="video-section">
+                    <div class="responsive-iframe-wrapper">
+                        <iframe src="https://www.youtube.com/embed/-t4RZuZXQUE" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
