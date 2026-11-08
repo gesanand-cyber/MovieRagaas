@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Film Raaga Zone - Tamil movie songs associated with Carnatic ragas">
+  <title>Film Raga Zone</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: #D8F0C6;
+      color: #172414;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+    .page { width: 100%; max-width: 1400px; margin: 0 auto; padding: 12px; }
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 8px 4px 14px;
+    }
+    .logo { width: 140px; height: auto; flex: 0 0 auto; }
+    .header-content { min-width: 0; flex: 1; }
+    .site-name { display: block; width: min(100%, 347px); height: auto; }
+    .tagline { margin: 10px 0 4px; font-family: "Times New Roman", serif; font-weight: bold; font-style: italic; }
+    .best-viewed { margin: 0; text-align: right; font-size: 12px; font-weight: bold; }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      background: #008000;
+      margin: 0 0 14px;
+    }
+    .nav a {
+      flex: 1 1 180px;
+      min-width: 0;
+      padding: 11px 14px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+    }
+    .nav a:hover, .nav a:focus { background: #006400; text-decoration: underline; }
+    .welcome { margin: 12px 2px 18px; }
+    .selector-panel {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0;
+      padding: 12px;
+      background: rgba(255,255,255,.38);
+      border-radius: 8px;
+    }
+    .selector-panel label { font-weight: bold; }
+    #raaga {
+      width: min(100%, 360px);
+      min-height: 44px;
+      padding: 8px 36px 8px 10px;
+      font: inherit;
+      border: 1px solid #66865a;
+      border-radius: 5px;
+      background: #fff;
+    }
+    .frame-wrap {
+      width: 100%;
+      margin-top: 12px;
+      overflow: hidden;
+      border: 1px solid #9ab58c;
+      background: #fff;
+      border-radius: 6px;
+    }
+    #myIframe {
+      display: block;
+      width: 100%;
+      height: clamp(520px, 78vh, 900px);
+      border: 0;
+      background: #fff;
+    }
+    footer { padding: 14px 4px 4px; text-align: center; font-size: 12px; }
+    @media (max-width: 600px) {
+      .page { padding: 8px; }
+      .site-header { flex-direction: column; text-align: center; gap: 8px; }
+      .logo { width: 112px; }
+      .site-name { margin: 0 auto; max-width: 280px; }
+      .tagline { margin-top: 8px; }
+      .best-viewed { text-align: center; }
+      .nav { display: grid; grid-template-columns: 1fr; gap: 1px; }
+      .nav a { padding: 12px 10px; text-align: left; }
+      .selector-panel { align-items: stretch; flex-direction: column; }
+      #raaga { width: 100%; }
+      #myIframe { height: 72vh; min-height: 480px; }
+    }
+  </style>
+  <script>
+    function setIframeraaga() {
+      const select = document.getElementById('raaga');
+      const frame = document.getElementById('myIframe');
+      if (select && frame && select.value) {
+        frame.src = select.value;
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <img class="logo" src="Images/logo1.jpg" alt="Film Raga Zone logo">
+      <div class="header-content">
+        <img class="site-name" src="Images/name.jpg" alt="Film Raga Zone">
+        <p class="tagline">The Land of Raagas associated with Tamil Movie Songs</p>
+        <p class="best-viewed">Best Viewed in Chrome</p>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="carnaticmusic.html" target="I1">Carnatic Music and Ragas</a>
+      <a href="CarnaticRaagaHealthBenefits.html" target="I1">Raga Health Benefits</a>
+      <a href="feedbackform.html" target="I1">Feedback</a>
+    </nav>
+
+    <p class="welcome">Welcome to the world of Tamil Film Ragas! This site is created for users who want to listen to songs composed in various Carnatic ragas.</p>
+
+    <section class="selector-panel" aria-label="Select a raaga">
+      <label for="raaga">Select Raaga:</label>
+      <select id="raaga" name="D1" onchange="setIframeraaga()">
+        <option value="blank.html">Select</option>
+        <option value="Kalyani.html">Kalyani</option>
+        <option value="Maayamaalavagowlai.html">Maaya Maalava Gowlai</option>
+        <option value="Sivaranjani">Sivarajani</option>
+        <option value="Chaarukesi.html">Chaarukesi</option>
+        <option value="Natabhairavi">Natabhairavi</option>
+        <option value="Madhyamavathi">Madhyamavathi</option>
+        <option value="Simmendra Madhyamam">Simmendra Madhayamam</option>
+        <option value="Shanmugapriya.html">Shamuga Priya</option>
+        <option value="Sindhu Bhairavi">Sindhu Bhairavi</option>
+        <option value="Shudha Dhanyaasi">Shudha Dhanyaasi</option>
+        <option value="Karahara Priya">Karahara Priya</option>
+        <option value="Hindolam.html">Hindolam</option>
+        <option value="Harikambodhi">Harikambodhi</option>
+        <option value="Shubha Bhandhuvaraali">Shubha Bhandhuvaraali</option>
+        <option value="Mohanam">Mohanam</option>
+        <option value="Anandha Bhairavi">Anandha Bhairavi</option>
+        <option value="Kaapi">Kaapi</option>
+        <option value="Dharbhaari Kaanada">Dharbhaari Kaanada</option>
+        <option value="Bandhuvaraali">Bandhuvaraali</option>
+        <option value="Gauri Manohari">Gauri Manohari</option>
+        <option value="Maandu">Maandu/Misra Mandu</option>
+        <option value="Thilang">Thilang</option>
+        <option value="Hamsadhvani">Hamsadhavani</option>
+        <option value="Revathi">Revathi</option>
+      </select>
+    </section>
+
+    <div class="frame-wrap">
+      <iframe id="myIframe" name="I1" src="about:blank" title="Selected raaga content" loading="lazy"></iframe>
+    </div>
+
+    <footer>© 2018 Created by Anand S. All rights reserved</footer>
+  </main>
+</body>
+</html>
