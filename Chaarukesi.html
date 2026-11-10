@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Chaarukesi - Raaga Details</title>
+  <style>
+    :root {
+      --bg-color: #f4f8f7;
+      --card-bg: #ffffff;
+      --header-bg: #4e7d77;
+      --header-text: #ffffff;
+      --row-alt: #f8faf9;
+      --border-color: #000000;
+      --link-color: #2c6e63;
+      --text-dark: #2b3a37;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+    }
+
+    body {
+      overflow-y: auto;
+    }
+
+    /* Standard Desktop / Native Landscape */
+    .container {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-bar {
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+
+    .header-bar h1 {
+      font-size: clamp(0.8rem, 3.5vw, 1.35rem);
+      color: var(--header-bg);
+      white-space: nowrap;
+      min-width: 0;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-size: clamp(0.65rem, 2.5vw, 0.85rem);
+      color: var(--link-color);
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--link-color);
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover {
+      background-color: var(--link-color);
+      color: #fff;
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      background-color: #ffffff;
+    }
+
+    /* Selector Styling */
+    .selector-card {
+      background: #fdfdfd;
+      border: 1px solid #c9d6d3;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .selector-card label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+      color: var(--header-bg);
+      font-size: 0.95rem;
+    }
+
+    .song-dropdown {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.85rem;
+      border: 1.5px solid var(--header-bg);
+      border-radius: 6px;
+      background-color: #fff;
+      color: #222;
+      outline: none;
+    }
+
+    /* Player & Details Display */
+    .details-card {
+      border: 1px solid #d5dedc;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fafcfb;
+      margin-bottom: 1rem;
+    }
+
+    .song-meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+
+    .song-meta-table td {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #d5dedc;
+      font-size: 0.9rem;
+    }
+
+    .song-meta-table td.label-col {
+      white-space: nowrap;
+      width: 32%;
+      padding-left: 0.4rem;
+      padding-right: 0.4rem;
+      font-size: clamp(0.7rem, 2.8vw, 0.9rem);
+    }
+
+    @media (max-width: 480px) {
+      .header-bar {
+        padding: 0.75rem 0.5rem;
+        gap: 0.35rem;
+      }
+
+      .header-bar h1 {
+        font-size: clamp(0.72rem, 3.2vw, 1rem);
+      }
+
+      .back-btn {
+        padding: 0.3rem 0.4rem;
+        font-size: clamp(0.6rem, 2.4vw, 0.75rem);
+      }
+    }
+
+    .song-meta-table td.label-col {
+      width: 25%;
+      background-color: #edf3f1;
+      font-weight: 600;
+      color: var(--header-bg);
+    }
+
+    .details-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      background-color: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .note-box {
+      margin: 0.5rem 1rem;
+      padding: 0.75rem 1rem;
+      background-color: #ffe6eb;
+      color: red;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .note-box strong {
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container" id="app-container">
+    <div class="header-bar">
+      <h1>Chaarukesi (26th Melakartha)</h1>
+      <a href="index.html" class="back-btn">&larr; Back to Raagas</a>
+    </div>
+
+    <div class="note-box">
+      <strong>Note:</strong>
+      <ol style="margin: 0.25rem 0 0 1.25rem;">
+        <li>If the embedded video appears black or disabled by the owner, click the "Watch on YouTube" button below.</li>
+        <li>Please wait for any <b>ad</b> to finish before playback begins.</li>
+      </ol>
+    </div>
+
+    <div class="table-container">
+      <!-- Song Selection Box -->
+      <div class="selector-card">
+        <label for="songSelect">Select a Song:</label>
+        <select id="songSelect" class="song-dropdown" onchange="renderSelectedSong(this.value)">
+          <!-- Generated by JavaScript -->
+        </select>
+      </div>
+
+      <!-- Detail & Video Display Area -->
+      <div class="details-card" id="detailsSection">
+        <table class="song-meta-table">
+          <tr>
+            <td class="label-col">Song Name</td>
+            <td id="displaySongTitle"><b>-</b></td>
+          </tr>
+          <tr>
+            <td class="label-col">Movie & Year</td>
+            <td id="displayMovieYear">-</td>
+          </tr>
+        </table>
+
+        <div class="video-wrapper">
+          <iframe
+            id="videoIframe"
+            src=""
+            title="Song Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <footer style="
+        text-align: center;
+        padding: 14px 10px;
+        font-size: 12px;
+        color: #666;
+        background-color: #f2f2f2;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 1rem;
+      ">
+        Copyright © 2026 Anand S. All Rights Reserved.
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Songs database extracted from the table
+    const songsData = [
+      { id: 1, song: "Manmadha Leelai", movie: "Haridas", year: "1944", videoId: "GUR4ZKgC6cc" },
+      { id: 2, song: "Vasantha Mullai Polae Vandhu", movie: "Saarangadhaara", year: "1957", videoId: "ZZCS5dh-ofM" },
+      { id: 3, song: "Sakkara Katti Sakkara Katti Sandhana Petti", movie: "Ulle Veliyae", year: "1993", videoId: "ykm6WAGgLLE" },
+      { id: 4, song: "Thoodhu Selvadhaaradi", movie: "Singaravelan", year: "1992", videoId: "00_9hNk9f5c" },
+      { id: 5, song: "Sendhoora Paandikkoru Sodi Kili", movie: "Sendhoora Paandi", year: "1993", videoId: "ECJAHaftYsIc" },
+      { id: 6, song: "Engengae Engengae", movie: "Nerukku Ner", year: "1997", videoId: "ZN31q7Jnjyg" },
+      { id: 7, song: "Varacholladi", movie: "Paadhukaappu", year: "1970", videoId: "qWnvM0VrQ10" },
+      { id: 8, song: "Agaram Ippo Sigaram Aachu", movie: "Sigaram", year: "1991", videoId: "Nv9IkonRmqQ" },
+      { id: 9, song: "Chinnanjiru Kiliyae", movie: "Mundhaanai Mudichchu", year: "1983", videoId: "QjgoQtmh4fU" },
+      { id: 10, song: "Mana Maalaiyum Manjalum Soodi", movie: "Vaathiyaar Veettu Pillai", year: "1989", videoId: "EQXjCUhDPh8" },
+      { id: 11, song: "Kaadhalin Deepam Ondru", movie: "Thambikki Endha Ooru", year: "1984", videoId: "Jp8RuCRgUaA" },
+      { id: 12, song: "Aadal Kalaiyae Devan Thandhadhu", movie: "Raghavendra", year: "1985", videoId: "v83aaGnC4CY" },
+      { id: 13, song: "Thoongaadha Kannendru Ondru", movie: "Kungumam", year: "1963", videoId: "M6OJpL6PAUo" },
+      { id: 14, song: "Azhagiya Thamil Magal Ival", movie: "Rikshawkkaaran", year: "1971", videoId: "v9AmoELiJAw" },
+      { id: 15, song: "Samsaaram Adhu Minsaaram", movie: "Samsaaram Adhu Minsaaram", year: "1989", videoId: "mnAxQ76jDOM" },
+      { id: 16, song: "Mayanginaen Solla Thayanginaen", movie: "Naanae Raaja Naanae Mandhiri", year: "1985", videoId: "8WX0pJ2zuQA" },
+      { id: 17, song: "Chandiranae Suriyanae", movie: "Amaran", year: "1992", videoId: "ZQ5vxG3EQlQ" },
+      { id: 18, song: "En Raasaathi Nee Vazhanum", movie: "Oomai Kuyil", year: "1988", videoId: "1n5rA7VAsRM" },
+      { id: 19, song: "Aadal Kaaneero", movie: "Madurai Veeran", year: "1956", videoId: "i1VDjifCeng" },
+      { id: 20, song: "Neeyae Gathi Easwari", movie: "Annaiyin Aanai", year: "1958", videoId: "-t4RZuZXQUE" }
+    ];
+
+    // Populate dropdown
+    const selectElem = document.getElementById("songSelect");
+    songsData.forEach((item, index) => {
+      const opt = document.createElement("option");
+      opt.value = index;
+      opt.textContent = `${index + 1}. ${item.song}`;
+      selectElem.appendChild(opt);
+    });
+
+    function renderSelectedSong(index) {
+      const selected = songsData[index];
+      if (!selected) return;
+
+      document.getElementById("displaySongTitle").textContent = selected.song;
+      document.getElementById("displayMovieYear").textContent = `${selected.movie} (${selected.year})`;
+      
+      const iframe = document.getElementById("videoIframe");
+      iframe.src = `https://www.youtube.com/embed/${selected.videoId}?playsinline=1&enablejsapi=1`;
+      iframe.title = selected.song;
+    }
+
+    // Default select first song
+    renderSelectedSong(0);
+
+  </script>
+
+</body>
+</html>
